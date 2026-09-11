@@ -33,7 +33,7 @@ void SSD_DisplayNumber1Digit(uint8_t GroupName,uint8_t Number,uint8_t SSDType)
 	{
 		DIO_WriteValueForGroup(GroupName, SSDNumber[Number]);
 	}
-	else if(SSDType == SSD_Anode)
+	else if(SSDType == SSD_Cathode)
 	{
 		DIO_WriteValueForGroup(GroupName, ~SSDNumber[Number]);
 	}

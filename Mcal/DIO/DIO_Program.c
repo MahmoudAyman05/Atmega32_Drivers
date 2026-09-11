@@ -134,42 +134,11 @@ uint8_t DIO_ReadStateInputForGroup(uint8_t GroupName)
 // InternalPullUpState -> Low  -> 0 -> ClearBit (disable pull-up)
 void DIO_InternalPullUpControlForPin(uint8_t GroupName,uint8_t PinNumber,uint8_t InternalPullUpState)
 {
-	if(PinNumber<=DIO_Pin7)
-	{
-		if(InternalPullUpState==DIO_High)
-		{
-			switch(GroupName)
-			{
-			case DIO_GroupA:SetBit(PORTA_Reg,PinNumber);break;
-			case DIO_GroupB:SetBit(PORTB_Reg,PinNumber);break;
-			case DIO_GroupC:SetBit(PORTC_Reg,PinNumber);break;
-			case DIO_GroupD:SetBit(PORTD_Reg,PinNumber);break;
-			default:break;
-			}
-		}
-		else if(InternalPullUpState==DIO_Low)
-		{
-			switch(GroupName)
-			{
-			case DIO_GroupA:ClearBit(PORTA_Reg,PinNumber);break;
-			case DIO_GroupB:ClearBit(PORTB_Reg,PinNumber);break;
-			case DIO_GroupC:ClearBit(PORTC_Reg,PinNumber);break;
-			case DIO_GroupD:ClearBit(PORTD_Reg,PinNumber);break;
-			default:break;
-			}
-		}
-	}
+	DIO_WriteValueForPin(GroupName,PinNumber,InternalPullUpState);
 }
 void DIO_InternalPullUpControlForGroup(uint8_t GroupName,uint8_t InternalPullUpState)
 {
-	switch(GroupName)
-	{
-	case DIO_GroupA:PORTA_Reg=InternalPullUpState;break;
-	case DIO_GroupB:PORTB_Reg=InternalPullUpState;break;
-	case DIO_GroupC:PORTC_Reg=InternalPullUpState;break;
-	case DIO_GroupD:PORTD_Reg=InternalPullUpState;break;
-	default:break;
-	}
+	DIO_WriteValueForGroup( GroupName, InternalPullUpState );
 }
 void DIO_ToggleValueForPin(uint8_t GroupName, uint8_t PinNumber)
 {
