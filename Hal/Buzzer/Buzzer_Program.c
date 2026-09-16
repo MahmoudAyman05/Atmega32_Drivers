@@ -27,7 +27,7 @@ void Buzzer_Off(uint8_t GroupName, uint8_t PinNo)
 
 void Buzzer_Toggle(uint8_t GroupName, uint8_t PinNo)
 {
-	void DIO_ToggleValueForPin(uint8_t GroupName, uint8_t PinNo);
+	DIO_ToggleValueForPin(GroupName, PinNo);
 }
 
 
