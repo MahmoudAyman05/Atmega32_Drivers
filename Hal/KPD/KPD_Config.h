@@ -9,7 +9,7 @@
 #define HAL_KPD_KPD_CONFIG_H_
 
 #define Kpd_ColNo  3  //4 for 4x4
-#define Kpd_RowNo  3  //4 for 4x4
+#define Kpd_RowNo  4  //4 for 4x4
 
 #define Kpd_R0Pin      DIO_Pin0
 #define Kpd_R0Group    DIO_GroupB
@@ -40,12 +40,20 @@
 #define Kpd_CGroupConfigured  {Kpd_C0Group,Kpd_C1Group,Kpd_C2Group,Kpd_C3Group}
 #define Kpd_CPinConfigured	   {Kpd_C0Pin,Kpd_C1Pin,Kpd_C2Pin,Kpd_C3Pin}
 
-//for 3x3
+//For Task
+#define Kpd_ValuesConfigured  { {'1','2','3'},\
+								{'4','5','6'},\
+								{'7','8','9'},\
+								{'C','0','Null'}}
+
+
+/*for 3x3
 
 #define Kpd_ValuesConfigured  { {'1','2','3'},\
 								{'4','5','6'},\
 								{'7','8','9'} }
 
+*/
 
 /* for 4x4
 #define Kpd_ValuesConfigured  { {'1','2','3','+'},\
