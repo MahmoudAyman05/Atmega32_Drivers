@@ -17,12 +17,24 @@ void Buzzer_Init(uint8_t GroupName, uint8_t PinNo)
 
 void Buzzer_On(uint8_t GroupName, uint8_t PinNo)
 {
+#if Buzzer_Connection==Buzzer_NPNConnection
 	DIO_WriteValueForPin(GroupName, PinNo, DIO_High);
+#elif Buzzer_Connection==Buzzer_PNPConnection
+	DIO_WriteValueForPin(GroupName, PinNo, DIO_Low);
+#else
+#error "Invalid Buzzer Connection"
+#endif
 }
 
 void Buzzer_Off(uint8_t GroupName, uint8_t PinNo)
 {
-	DIO_WriteValueForPin(GroupName, PinNo, DIO_Low);
+#if Buzzer_Connection==Buzzer_NPNConnection
+	DIO_WriteValueForPin(GroupName,PinNo,DIO_Low);
+#elif Buzzer_Connection==Buzzer_PNPConnection
+	DIO_WriteValueForPin(GroupName,PinNo,DIO_High);
+#else
+#error "Invalid Buzzer Connection"
+#endif
 }
 
 void Buzzer_Toggle(uint8_t GroupName, uint8_t PinNo)

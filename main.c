@@ -5,14 +5,15 @@
  *      Author: mahmo
  */
 
-#include "App/LcdNameApp/LcdNameApp_Interface.h"
+#include "App/ADC_Test/ADC_Test.h"
 
 void main()
 {
-	PasswordSystem_Init();
-	while(1)
+	ADCTest_Init();
+	while (1)
 	{
-		PasswordSystem_Run();
+		ADCTest_Runner();
 	}
 }
+
 

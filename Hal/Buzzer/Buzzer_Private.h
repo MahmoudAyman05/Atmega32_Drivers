@@ -8,8 +8,7 @@
 #ifndef HAL_BUZZER_BUZZER_PRIVATE_H_
 #define HAL_BUZZER_BUZZER_PRIVATE_H_
 
-#include <stdint.h>
-#include <util/delay.h>
-
+#define Buzzer_NPNConnection    1
+#define Buzzer_PNPConnection    2
 
 #endif /* HAL_BUZZER_BUZZER_PRIVATE_H_ */

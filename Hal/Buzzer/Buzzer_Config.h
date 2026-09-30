@@ -8,6 +8,6 @@
 #ifndef HAL_BUZZER_BUZZER_CONFIG_H_
 #define HAL_BUZZER_BUZZER_CONFIG_H_
 
-
+#define Buzzer_Connection   Buzzer_NPNConnection
 
 #endif /* HAL_BUZZER_BUZZER_CONFIG_H_ */
